@@ -57,7 +57,7 @@ def get_gpt4_response(client, model, prompt, index):
         return None
 
 # Example usage
-pdf = R"C:\Users\sakthi\OneDrive\books\radiodiagnosis\AIIMS_MAMC_Pgi's_Comprehensive_Textbook_of_Diagnostic_Radiology.pdf"
+pdf = R"D:\files\Diagnostic_Radiology.pdf"
 index = extract_bookmarks(pdf)
 print(len(list_index))
 prompt = "I need information on 'neuroblastoma'"
