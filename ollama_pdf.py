@@ -2,7 +2,7 @@ import PyPDF2
 from openai import OpenAI
 import os
 fireworks_client = OpenAI(api_key=os.getenv('fireworks_api_key'), base_url='https://api.fireworks.ai/inference/v1')
-ollama_client = OpenAI(api_key='ollama', base_url='http://192.168.29.2:11434/v1/')
+ollama_client = OpenAI(api_key='ollama', base_url='http://127.0.0.1:11434/v1/')
 lmstudio = OpenAI(api_key='ollama', base_url='http://127.0.0.1:1234/v1')
 # gpt_client = OpenAI(api_key=openai_token)
 
@@ -60,7 +60,8 @@ def get_gpt4_response(client, model, prompt, index):
 pdf = R"D:\files\Diagnostic_Radiology.pdf"
 index = extract_bookmarks(pdf)
 print(len(list_index))
-prompt = "I need information on 'neuroblastoma'"
+# prompt = "I need information on 'neuroblastoma'"
+prompt = input()
 response = get_gpt4_response(lmstudio, "meta-llama-3.1-8b-instruct", prompt, list_index)
 # response = get_gpt4_response(gpt_client, "gpt-4o-mini", prompt, list_index)
 
